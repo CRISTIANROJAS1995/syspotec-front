@@ -1,0 +1,404 @@
+<div class="flex flex-row w-full">
+    <div class="flex flex-wrap w-full max-w-screen-xl mx-auto p-6 md:p-8">
+        <div class="w-full mx-auto">
+
+            <form form [formGroup]="addPromotionForm" #hibeatNgForm="ngForm">
+                <div
+                    class="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-flow-row gap-6 w-full mt-8 sm:mt-4"
+                >
+                    <div
+                        class="flex flex-col flex-auto justify-center place-items-center"
+                    >
+                        <div class="flex items-center">
+                            <div class="flex flex-col mt-2">
+                                <div
+                                    class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                >
+                                    Outstanding Image
+                                </div>
+                            </div>
+                        </div>
+
+                        <hibeats-cover-upload
+                            class="container-card"
+                            [urlImage]="hibeatCoverUrl"
+                            (loadFile)="onLoadCoverFile($event)"
+                        >
+                        </hibeats-cover-upload>
+                    </div>
+
+                    <div
+                        class="flex flex-col flex-auto justify-center place-items-center "
+                    >
+                        <div class="flex items-center">
+                            <div class="flex flex-col mt-2">
+                                <div
+                                    class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                >
+                                    Secundary Image
+                                </div>
+                            </div>
+                        </div>
+
+                        <hibeats-cover-upload
+                            class="container-card"
+                            [urlImage]="hibeatCoverUrlSecundary"
+                            (loadFile)="onLoadCoverFileSecundary($event)"
+                        >
+                        </hibeats-cover-upload>
+                    </div>
+                </div>
+
+
+                <div
+                    class="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-flow-row gap-6 w-full mt-12 sm:mt-4"
+                >
+
+                    <div
+                        class="flex flex-col flex-auto justify-center place-items-center mt-5 rounded-2xl shadow"
+                    >
+                    <div class="flex-row items-center justify-center w-full mt-3">
+                        <div class="justify-center">
+                            <!-- <h2 class="text-3xl mt-8 text-indigo-800 font-extrabold tracking-tight leading-8">My HiBeats</h2> -->
+                            <div
+                                class="text-white text-2xl font-extrabold leading-loose"
+                            >
+                                ENGLISH
+                            </div>
+                        </div>
+                    </div>
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center rounded-2xl shadow mt-6"
+                        >
+                            <div class="flex items-center mt-4">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Title
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="titleEnglish"
+                                    placeholder="Write a title for your news."
+                                    matInput
+                                    [formControlName]="'titleEnglish'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('titleEnglish')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Titte is required.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center mt-5 rounded-2xl shadow"
+                        >
+                            <div class="flex items-center mt-5">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Subtitle
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="subtitleEnglish"
+                                    placeholder="Write a subtitle for your news"
+                                    matInput
+                                    [formControlName]="'subtitleEnglish'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('subtitleEnglish')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Subtitle is required.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center mt-5 rounded-2xl shadow"
+                        >
+                            <div class="flex items-center mt-5">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Text 1
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="text1English"
+                                    placeholder="Write a text for your news"
+                                    matInput
+                                    [formControlName]="'text1English'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('text1English')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Text 1 is required.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div
+                        class="flex flex-col flex-auto justify-center place-items-center mt-5 rounded-2xl shadow"
+                    >
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center rounded-2xl shadow"
+                        >
+                            <div class="flex items-center mt-4">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Text 2
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="text2English"
+                                    placeholder="Write a second text for your news"
+                                    matInput
+                                    [formControlName]="'text2English'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('text2English')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Text 2 is required.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col flex-auto justify-center place-items-center mt-5 rounded-2xl shadow"
+                    >
+
+                    <div class="flex-row items-center justify-center w-full mt-3">
+                        <div class="justify-center">
+                            <!-- <h2 class="text-3xl mt-8 text-indigo-800 font-extrabold tracking-tight leading-8">My HiBeats</h2> -->
+                            <div
+                                class="text-white text-2xl font-extrabold leading-loose"
+                            >
+                                SPANISH
+                            </div>
+                        </div>
+                    </div>
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center rounded-2xl shadow mt-6"
+                        >
+                            <div class="flex items-center mt-2">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Titulo
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="titleSpanish"
+                                    placeholder="Escribe un título para tu noticia."
+                                    matInput
+                                    [formControlName]="'titleSpanish'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('titleSpanish')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Titulo es requerido.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center mt-5 rounded-2xl shadow"
+                        >
+                            <div class="flex items-center mt-5">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Subtitulo
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="subtitleSpanish"
+                                    placeholder="Escribe un subtitulo para tu noticia."
+                                    matInput
+                                    [formControlName]="'subtitleSpanish'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('subtitleSpanish')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Subtitulo es requerido.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center mt-5 rounded-2xl shadow"
+                        >
+                            <div class="flex items-center mt-">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Texto 1
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="text1Spanish"
+                                    placeholder="Escribe un texto para tu noticia."
+                                    matInput
+                                    [formControlName]="'text1Spanish'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('text1Spanish')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Text 1 es requerido.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div
+                            class="flex flex-col flex-auto justify-center place-items-center rounded-2xl shadow"
+                        >
+                            <div class="flex items-center mt-4">
+                                <div class="flex flex-col">
+                                    <div
+                                        class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                                    >
+                                        Texto 2
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-form-field class="w-120 px-8 pb-2 mt-8">
+                                <input
+                                    class="text-md text-white"
+                                    id="text2Spanish"
+                                    placeholder="Escribe un segundo texto para tu noticia."
+                                    matInput
+                                    [formControlName]="'text2Spanish'"
+                                />
+                                <mat-error
+                                    class="text-1xl"
+                                    *ngIf="
+                                        addPromotionForm
+                                            .get('text2Spanish')
+                                            .hasError('required')
+                                    "
+                                >
+                                    Text 2 es requerido.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col flex-auto justify-center p-6 place-items-center"
+                >
+                    <button
+                        class="syspotec-mat-button-large w-full max-w-80 sm:w-80 mx-auto mt-5"
+                        mat-flat-button
+                        [disabled]="!isFormValid"
+                        [color]="'primary'"
+                        (click)="sendData()"
+
+                    >
+                    <div *ngIf="isFormValid">
+                        <mat-icon svgIcon="mat_solid:add"></mat-icon>
+                        <span class="text-1xl"> Save </span>
+                    </div>
+                    </button>
+                </div>
+                <div class="flex flex-col flex-auto justify-end place-items-center bg-card rounded-2xl shadow"
+                *ngIf="isEdit">
+
+                <div class="flex items-center mt-5">
+                    <div class="flex flex-col">
+                        <div class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white">
+                            Remove News</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center mt-5 mb-5">
+                    <div class="flex flex-col">
+                        <button type="button" class="syspotec-mat-button-large w-full mt-1"
+                            (click)="deleteNews()" mat-flat-button [color]="'primary'">
+
+                            <mat-icon svgIcon="mat_solid:delete"></mat-icon>
+                            <span class="ml-1">
+                                ELIMINATE
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

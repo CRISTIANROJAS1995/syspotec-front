@@ -1,0 +1,1 @@
+export * from './syspotec.module';

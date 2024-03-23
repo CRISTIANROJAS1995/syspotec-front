@@ -1,0 +1,194 @@
+/* Variables */
+:root {
+    --syspotec-vertical-navigation-width: 280px;
+    --syspotec-vertical-navigation-dense-width: 80px;
+}
+
+syspotec-vertical-navigation {
+
+    /* Dense appearance overrides */
+    &.syspotec-vertical-navigation-appearance-dense {
+
+        &:not(.syspotec-vertical-navigation-mode-over) {
+            width: var(--syspotec-vertical-navigation-dense-width);
+            min-width: var(--syspotec-vertical-navigation-dense-width);
+            max-width: var(--syspotec-vertical-navigation-dense-width);
+
+            /* Left positioned */
+            &.syspotec-vertical-navigation-position-left {
+
+                /* Side mode */
+                &.syspotec-vertical-navigation-mode-side {
+                    margin-left: calc(var(--syspotec-vertical-navigation-dense-width) * -1);
+                }
+
+                /* Opened */
+                &.syspotec-vertical-navigation-opened {
+                    margin-left: 0;
+                }
+            }
+
+            /* Right positioned */
+            &.syspotec-vertical-navigation-position-right {
+
+                /* Side mode */
+                &.syspotec-vertical-navigation-mode-side {
+                    margin-right: calc(var(--syspotec-vertical-navigation-dense-width) * -1);
+                }
+
+                /* Opened */
+                &.syspotec-vertical-navigation-opened {
+                    margin-right: 0;
+                }
+
+                /* Aside wrapper */
+                .syspotec-vertical-navigation-aside-wrapper {
+                    left: auto;
+                    right: var(--syspotec-vertical-navigation-dense-width);
+                }
+
+                &.syspotec-vertical-navigation-hover {
+
+                    .syspotec-vertical-navigation-aside-wrapper {
+                        left: auto;
+                        right: var(--syspotec-vertical-navigation-width);
+                    }
+                }
+            }
+        }
+
+        /* Wrapper */
+        .syspotec-vertical-navigation-wrapper {
+
+            /* Content */
+            .syspotec-vertical-navigation-content {
+
+                syspotec-vertical-navigation-aside-item,
+                syspotec-vertical-navigation-basic-item,
+                syspotec-vertical-navigation-collapsable-item,
+                syspotec-vertical-navigation-group-item {
+
+                    .syspotec-vertical-navigation-item-wrapper {
+
+                        .syspotec-vertical-navigation-item {
+                            width: calc(var(--syspotec-vertical-navigation-dense-width) - 24px);
+                            min-width: calc(var(--syspotec-vertical-navigation-dense-width) - 24px);
+                            max-width: calc(var(--syspotec-vertical-navigation-dense-width) - 24px);
+
+                            .syspotec-vertical-navigation-item-arrow,
+                            .syspotec-vertical-navigation-item-badge,
+                            .syspotec-vertical-navigation-item-title-wrapper {
+                                transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+                            }
+                        }
+                    }
+                }
+
+                syspotec-vertical-navigation-group-item {
+
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        &:not(.syspotec-vertical-navigation-hover):not(.syspotec-vertical-navigation-mode-over) {
+
+            /* Wrapper */
+            .syspotec-vertical-navigation-wrapper {
+
+                /* Content */
+                .syspotec-vertical-navigation-content {
+
+                    .syspotec-vertical-navigation-item-wrapper {
+
+                        .syspotec-vertical-navigation-item {
+                            padding: 10px 16px;
+
+                            .syspotec-vertical-navigation-item-arrow,
+                            .syspotec-vertical-navigation-item-badge,
+                            .syspotec-vertical-navigation-item-title-wrapper {
+                                white-space: nowrap;
+                                opacity: 0;
+                            }
+                        }
+                    }
+
+                    syspotec-vertical-navigation-collapsable-item {
+
+                        .syspotec-vertical-navigation-item-children {
+                            display: none;
+                        }
+                    }
+
+                    syspotec-vertical-navigation-group-item {
+
+                        > .syspotec-vertical-navigation-item-wrapper {
+
+                            .syspotec-vertical-navigation-item {
+
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 20px;
+                                    width: 23px;
+                                    border-top-width: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .syspotec-vertical-navigation-aside-wrapper {
+            left: var(--syspotec-vertical-navigation-dense-width);
+        }
+
+        /* Hover */
+        &.syspotec-vertical-navigation-hover {
+
+            .syspotec-vertical-navigation-wrapper {
+                width: var(--syspotec-vertical-navigation-width);
+
+                .syspotec-vertical-navigation-content {
+
+                    .syspotec-vertical-navigation-item-wrapper {
+
+                        .syspotec-vertical-navigation-item {
+                            width: calc(var(--syspotec-vertical-navigation-width) - 24px);
+                            min-width: calc(var(--syspotec-vertical-navigation-width) - 24px);
+                            max-width: calc(var(--syspotec-vertical-navigation-width) - 24px);
+
+                            .syspotec-vertical-navigation-item-arrow,
+                            .syspotec-vertical-navigation-item-badge,
+                            .syspotec-vertical-navigation-item-title-wrapper {
+                                white-space: nowrap;
+                                animation: removeWhiteSpaceNoWrap 1ms linear 350ms;
+                                animation-fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .syspotec-vertical-navigation-aside-wrapper {
+                left: var(--syspotec-vertical-navigation-width);
+            }
+        }
+    }
+}
+
+@keyframes removeWhiteSpaceNoWrap {
+    0% {
+        white-space: nowrap
+    }
+    99% {
+        white-space: nowrap
+    }
+    100% {
+        white-space: normal;
+    }
+}

@@ -1,0 +1,11 @@
+:host {
+  width: auto;
+  padding: 7px;
+  border: 1px solid var(--syspotec-primary);
+  border-radius: 1.875rem;
+  span,
+  i {
+    padding-left: 13px;
+    color: var(--syspotec-primary);
+  }
+}

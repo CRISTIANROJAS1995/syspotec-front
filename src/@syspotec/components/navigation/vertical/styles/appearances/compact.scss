@@ -1,0 +1,112 @@
+/* Variables */
+:root {
+    --syspotec-vertical-navigation-compact-width: 112px;
+}
+
+syspotec-vertical-navigation {
+
+    /* Compact appearance overrides */
+    &.syspotec-vertical-navigation-appearance-compact {
+        width: var(--syspotec-vertical-navigation-compact-width);
+        min-width: var(--syspotec-vertical-navigation-compact-width);
+        max-width: var(--syspotec-vertical-navigation-compact-width);
+
+        /* Left positioned */
+        &.syspotec-vertical-navigation-position-left {
+
+            /* Side mode */
+            &.syspotec-vertical-navigation-mode-side {
+                margin-left: calc(var(--syspotec-vertical-navigation-compact-width) * -1);
+            }
+
+            /* Opened */
+            &.syspotec-vertical-navigation-opened {
+                margin-left: 0;
+            }
+        }
+
+        /* Right positioned */
+        &.syspotec-vertical-navigation-position-right {
+
+            /* Side mode */
+            &.syspotec-vertical-navigation-mode-side {
+                margin-right: calc(var(--syspotec-vertical-navigation-compact-width) * -1);
+            }
+
+            /* Opened */
+            &.syspotec-vertical-navigation-opened {
+                margin-right: 0;
+            }
+
+            /* Aside wrapper */
+            .syspotec-vertical-navigation-aside-wrapper {
+                left: auto;
+                right: var(--syspotec-vertical-navigation-compact-width);
+            }
+        }
+
+        /* Wrapper */
+        .syspotec-vertical-navigation-wrapper {
+
+            /* Content */
+            .syspotec-vertical-navigation-content {
+
+                > syspotec-vertical-navigation-aside-item,
+                > syspotec-vertical-navigation-basic-item {
+
+                    .syspotec-vertical-navigation-item-wrapper {
+                        margin: 4px 8px 0 8px;
+
+                        .syspotec-vertical-navigation-item {
+                            flex-direction: column;
+                            justify-content: center;
+                            padding: 12px;
+                            border-radius: 6px;
+
+                            .syspotec-vertical-navigation-item-icon {
+                                margin-right: 0;
+                            }
+
+                            .syspotec-vertical-navigation-item-title-wrapper {
+                                margin-top: 8px;
+
+                                .syspotec-vertical-navigation-item-title {
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    text-align: center;
+                                    line-height: 16px;
+                                }
+
+                                .syspotec-vertical-navigation-item-subtitle {
+                                    display: none !important;
+                                }
+                            }
+
+                            .syspotec-vertical-navigation-item-badge {
+                                position: absolute;
+                                top: 12px;
+                                left: 64px;
+                            }
+                        }
+                    }
+
+                    > syspotec-vertical-navigation-collapsable-item {
+                        display: none
+                    }
+
+                    > syspotec-vertical-navigation-group-item {
+
+                        > .syspotec-vertical-navigation-item-wrapper {
+                            display: none
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .syspotec-vertical-navigation-aside-wrapper {
+            left: var(--syspotec-vertical-navigation-compact-width);
+        }
+    }
+}

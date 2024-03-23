@@ -1,0 +1,180 @@
+/* Root navigation specific */
+syspotec-horizontal-navigation {
+
+    .syspotec-horizontal-navigation-wrapper {
+        display: flex;
+        align-items: center;
+
+        /* Basic, Branch */
+        syspotec-horizontal-navigation-basic-item,
+        syspotec-horizontal-navigation-branch-item {
+
+            @screen sm {
+
+                &:hover {
+
+                    .syspotec-horizontal-navigation-item-wrapper {
+                        @apply bg-hover;
+                    }
+                }
+            }
+
+            .syspotec-horizontal-navigation-item-wrapper {
+                border-radius: 4px;
+                overflow: hidden;
+
+                .syspotec-horizontal-navigation-item {
+                    padding: 0 16px;
+                    cursor: pointer;
+                    user-select: none;
+
+                    .syspotec-horizontal-navigation-item-icon {
+                        margin-right: 12px;
+                    }
+                }
+            }
+        }
+
+        /* Basic - When item active (current link) */
+        syspotec-horizontal-navigation-basic-item {
+
+            .syspotec-horizontal-navigation-item-active,
+            .syspotec-horizontal-navigation-item-active-forced {
+
+                .syspotec-horizontal-navigation-item-title {
+                    @apply text-primary #{'!important'};
+                }
+
+                .syspotec-horizontal-navigation-item-subtitle {
+                    @apply text-primary-400 #{'!important'};
+
+                    .dark & {
+                        @apply text-primary-600 #{'!important'};
+                    }
+                }
+
+                .syspotec-horizontal-navigation-item-icon {
+                    @apply text-primary #{'!important'};
+                }
+            }
+        }
+
+        /* Branch - When menu open */
+        syspotec-horizontal-navigation-branch-item {
+
+            .syspotec-horizontal-navigation-menu-active,
+            .syspotec-horizontal-navigation-menu-active-forced {
+
+                .syspotec-horizontal-navigation-item-wrapper {
+                    @apply bg-hover;
+                }
+            }
+        }
+
+        /* Spacer */
+        syspotec-horizontal-navigation-spacer-item {
+            margin: 12px 0;
+        }
+    }
+}
+
+/* Menu panel specific */
+.syspotec-horizontal-navigation-menu-panel {
+
+    .syspotec-horizontal-navigation-menu-item {
+        height: auto;
+        min-height: 0;
+        line-height: normal;
+        white-space: normal;
+
+        /* Basic, Branch */
+        syspotec-horizontal-navigation-basic-item,
+        syspotec-horizontal-navigation-branch-item,
+        syspotec-horizontal-navigation-divider-item {
+            display: flex;
+            flex: 1 1 auto;
+        }
+
+        /* Divider */
+        syspotec-horizontal-navigation-divider-item {
+            margin: 8px -16px;
+
+            .syspotec-horizontal-navigation-item-wrapper {
+                height: 1px;
+                box-shadow: 0 1px 0 0;
+            }
+        }
+    }
+}
+
+/* Navigation menu item common */
+.syspotec-horizontal-navigation-menu-item {
+
+    /* Basic - When item active (current link) */
+    syspotec-horizontal-navigation-basic-item {
+
+        .syspotec-horizontal-navigation-item-active,
+        .syspotec-horizontal-navigation-item-active-forced {
+
+            .syspotec-horizontal-navigation-item-title {
+                @apply text-primary #{'!important'};
+            }
+
+            .syspotec-horizontal-navigation-item-subtitle {
+                @apply text-primary-400 #{'!important'};
+
+                .dark & {
+                    @apply text-primary-600 #{'!important'};
+                }
+            }
+
+            .syspotec-horizontal-navigation-item-icon {
+                @apply text-primary #{'!important'};
+            }
+        }
+    }
+
+    .syspotec-horizontal-navigation-item-wrapper {
+        width: 100%;
+
+        &.syspotec-horizontal-navigation-item-has-subtitle {
+
+            .syspotec-horizontal-navigation-item {
+                min-height: 56px;
+            }
+        }
+
+        .syspotec-horizontal-navigation-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 48px;
+            width: 100%;
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+
+            .syspotec-horizontal-navigation-item-title-wrapper {
+
+                .syspotec-horizontal-navigation-item-subtitle {
+                    font-size: 12px;
+                }
+            }
+
+            .syspotec-horizontal-navigation-item-badge {
+                margin-left: auto;
+
+                .syspotec-horizontal-navigation-item-badge-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 10px;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

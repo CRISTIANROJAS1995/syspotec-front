@@ -1,0 +1,61 @@
+<!-- <hibeats-modal *ngIf="showModal" (Onclose)="showModal = false" [title]="titleModal">
+  {{ textModal }}
+</hibeats-modal> -->
+<div>
+
+  <div class="flex flex-row justify-content-between">
+    <div *ngIf="fileTmp.name || urlImage" class="reset-cover flex flex-row">
+        <mat-icon svgIcon="mat_solid:refresh" (click)="selectNewOne($event)"></mat-icon>
+        <mat-icon svgIcon="mat_solid:close" (click)="clearCurrentImage($event)"></mat-icon>
+    </div>
+ </div>
+  <div class="my-3">
+    <div *ngIf="loadingCover" class="loading-container flex justify-content-center align-items-center">
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <div *ngIf="!loadingCover">
+      <!--has image selected-->
+      <div class="cover m-3 pos-relative" *ngIf="fileTmp.name || urlImage">
+        <div *ngIf="!urlImage">
+          <img [src]="fileTmp.name" class="cover-viewer" [alt]="'cover'" />
+        </div>
+        <div *ngIf="urlImage">
+          <img [src]="urlImage" class="cover-viewer" [alt]="'cover'" />
+        </div>
+      </div>
+
+      <!--no image selected-->
+      <div class="custom-input-file cursor-pointer" (click)="openFile()" *ngIf="!fileTmp.name && !urlImage">
+        <span><mat-icon svgIcon="mat_solid:add" class="icon-size-16"></mat-icon></span>
+        <span class="mx-3 text-white">Click to select upload video</span>
+      </div>
+    </div>
+    <div class="texto">
+      <p class="text-white">
+        <b>extension:</b> {{ allowedFormats }} <br />
+        <b>format:</b> square  ({{ ratio }})<br />
+        <b>optimal size:</b> {{ dimensions }}
+      </p>
+      <p class="text-white">Do not reuse the same image for different HiBeats.<br /></p>
+      <!-- <div class="mt-3 mb-3">
+
+        <div class="inline-flex items-end w-full mt-1.5">
+            <mat-checkbox
+                [(ngModel)]="acceptTerms"
+                [color]="'primary'"
+                >
+                <span>I have read and accept</span>
+                <a
+                  target="_blank"
+                  href="https://hibeats.com/en/terms-and-conditions-of-use/"
+                  class="ml-1 text-primary-500 hover:underline">terms of use.
+                </a>
+            </mat-checkbox>
+        </div>
+
+      </div> -->
+    </div>
+
+    <input #inputfile class="hidden" type="file"  id="input" multiple (change)="onSelectFile($event)" accept=".mp4" />
+  </div>
+</div>

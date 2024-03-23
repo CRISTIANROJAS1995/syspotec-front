@@ -1,0 +1,46 @@
+<div class="flex flex-row w-full">
+    <div class="flex flex-wrap w-full max-w-screen-xl mx-auto p-6 md:p-8">
+        <div class="w-full mx-auto">
+            <div class="flex-row items-center justify-center w-full mt-3">
+                <div class="justify-center">
+                    <!-- <h2 class="text-3xl mt-8 text-indigo-800 font-extrabold tracking-tight leading-8">My HiBeats</h2> -->
+                    <div class="text-white text-2xl font-extrabold leading-loose">Promotions</div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap w-full max-w-screen-xl mx-auto">
+                <div class="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 grid-flow-row gap-6 w-full mt-4 sm:mt-4">
+                    <div *ngFor="let promotion of myPromotion" class="flex flex-col flex-auto bg-card rounded-2xl">
+                        <syspotec-card style="cursor: pointer;" class="flex flex-col w-full p-4 pb-4" (click)="goEditPromotion(promotion)" >
+                            <div class="flex flex-wrap w-full max-w-screen-xl mx-auto">
+                                <div class="flex flex-col place-items-center lg:place-items-start md:place-items-start sm:place-items-center">
+                                    <img class="rounded-lg w-full h-full " *ngIf="promotion.urlOutstandingImage" [src]="promotion.urlOutstandingImage" alt="Card cover image">
+                                </div>
+                            </div>
+                        </syspotec-card>
+                    </div>
+                </div>
+            </div>
+             <div class="flex flex-col flex-auto justify-center  place-items-center mt-4">
+
+                <button
+                    (click)="addPromo()"
+                    class="syspotec-mat-button-large  w-full max-w-80 sm:w-80 mx-auto mt-5"
+                    mat-flat-button
+                    [color]="'primary'">
+                    <mat-icon  svgIcon="mat_solid:add"></mat-icon>
+                    <span class="text-1xl">
+                        Add Promotion
+                    </span>
+                    <!-- <mat-progress-spinner
+
+                        *ngIf="hibeatForm.disabled"
+                        [diameter]="24"
+                        [mode]="'indeterminate'"></mat-progress-spinner> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

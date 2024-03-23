@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-syspotectest-staging-134937-authRole",
+      "UnauthRoleArn": "arn:aws:iam::992382614178:role/amplify-syspotectest-staging-134937-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::992382614178:role/amplify-syspotectest-staging-134937-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-syspotectest-staging-134937-deployment",
+      "UnauthRoleName": "amplify-syspotectest-staging-134937-unauthRole",
+      "StackName": "amplify-syspotectest-staging-134937",
+      "StackId": "arn:aws:cloudformation:us-west-1:992382614178:stack/amplify-syspotectest-staging-134937/30b97280-e91c-11ee-9f2a-02ee6686a3f3",
+      "AmplifyAppId": "d96zpvqfgj647"
+    },
+    "categories": {
+      "storage": {
+        "syspotectest83e9ca24": {
+          "bucketName": "syspotec-test",
+          "region": "us-west-1"
+        }
+      },
+      "auth": {
+        "syspotectest": {}
+      }
+    }
+  }
+}

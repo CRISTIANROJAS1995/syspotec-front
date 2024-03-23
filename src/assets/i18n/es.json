@@ -1,0 +1,201 @@
+{
+  "app_name": "HiBeats",
+  "app_name_sub": "for Artists",
+  "minutes": "minutos",
+  "extension": "extensión",
+  "format": "formato",
+  "square": "cuadrado",
+  "optimal_size": "tamaño óptimo",
+  "must_accept_terms": "Debes aceptar los términos y condiciones para continuar",
+  "remove": "eliminar",
+  "state": "estado",
+  "gender": "Género",
+  "genre": "Género",
+  "ups_block": "¡Ups!",
+  "title_block": "Por favor, accede desde un navegador de escritorio o descarga la app",
+  "subtitle_block": "¡Únete a la comunidad!",
+  "subtitle2_block": "HiBeats es la plataforma de los talentos emergentes. Visita nuestras redes y entérate de las novedades.",
+  "genders": {
+    "female": "Femenino",
+    "male": "Masculino",
+    "no-binary": "No Binario",
+    "unknow": "No especificado"
+  },
+  "status": {
+    "pending": "pendiente",
+    "ok": "Publicado",
+    "ko": "Rechazado",
+    "upload": "Publicado",
+    "denied": "Rechazado"
+  },
+  "languages": {
+    "en": "Inglés"
+  },
+  "header": {
+    "close_session": "Cerrar sesión",
+    "upload_hb": "Subir HiBeat",
+    "my_hb": "Mis HiBeats"
+  },
+  "login": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "new_password": "Nueva contraseña",
+    "btn_login": "Iniciar sesión",
+    "error_login": "Usuario o contraseña incorrectos",
+    "error_mail_login": "Mail incorrecto",
+    "error_mail_code_login": "Código o contraseña incorrectos",
+    "carousel_title": "Vamos a empezar su carrera",
+    "carousel_subtitle": "HiBeats es la primera aplicación donde puedes crear, compartir y hacer crecer tu propia música desde donde quieras.",
+    "btn_show_recovery": "¿Has olvidado la contraseña?",
+    "btn_change_pass": "Restablecer contraseña",
+    "code": "Código"
+  },
+  "upload": {
+    "title": "Titulo",
+    "discography": "Sello discográfico",
+    "file": "Archivo",
+    "bpm": "BPM",
+    "tone": "Tono",
+    "cover": "Cover",
+    "instruments": "Instrumentos",
+    "select-tone": "Selecciona un tono para tu HiBeat",
+    "select-gender": "Selecciona uno o varios géneros para tu HiBeat",
+    "select-instrument": "Selecciona uno o varios instrumentos para tu HiBeat",
+    "hb-selected": "HiBeat seleccionado",
+    "placeholder_title": "Escribe un título de tu HiBeat",
+    "placeholder_discography": "Escribe un título de tu Discografía",
+    "uploading": "Subiendo Hibeat...",
+    "proccessing": "Procesando...",
+    "file_upload": {
+      "click_to_upload": "Pulsa para seleccionar el archivo de subida",
+      "max_duration": "duración máxima",
+      "warning_1": "No reutilices la misma pista para HiBeats diferentes.",
+      "warning_2": "He leído y acepto",
+      "terms": "términos de uso."
+    },
+    "cover_upload": {
+      "click_to_upload": "Pulsa para seleccionar el archivo de subida",
+      "warning_1": "No reutilices la misma imagen para álbumes diferentes."
+    },
+    "remove": "Eliminar hibeat"
+  },
+  "code": {
+    "title": "Introduce tu código",
+    "warning": "¡Introduce aquí el código que hemos creado para tí en la última fase del registro móvil para empezar a subir tus temas a HiBeats!"
+  },
+  "home": {
+    "my-hibeats": "Mis HiBeats"
+  },
+  "hibeat-detail": {
+    "PushedAt": "Subido el :",
+    "score": "Puntuación",
+    "reproductions": "Streams",
+    "likes": "Likes",
+    "shareds": "Compartidos",
+    "comments": "Comentarios",
+    "stats": "Estadísticas",
+    "country": "País",
+    "age": "Edad"
+  },
+  "participate": {
+    "question": "¿Quieres participar con este HiBeat?",
+    "question-finished": "El proceso de participación de este Challenge ha finalizado",
+    "not-participating": "Parece que todavia no has participado con ningún HiBeat"
+  },
+  "modals": {
+    "done": {
+      "title": "¡Hecho!",
+      "text": "Tu Hibeat se ha creado con éxito, la plataforma está revisando el contenido para su aprobación."
+    },
+    "approved": {
+      "title": "¡Aprobado!",
+      "text": "Tu Hibeat ya está disponible."
+    },
+    "reject": {
+      "title": "Lo sentimos",
+      "text": "Tu Hibeat “{0}” ha sido rechazado por el siguiente motivo:",
+      "text_2": "Por favor, revisa el contenido y trata de volver a subirlo."
+    },
+    "remove_sure": {
+      "title": "Eliminar HiBeat",
+      "text": "Vas a eliminar este HiBeat. Esta acción borrará permanentemente el HiBeat, así como sus puntos y cualquier estadística asociada a él.",
+      "text_2": "¿Estás seguro?"
+    },
+    "removed": {
+      "title": "¡Hecho!",
+      "text": "HiBeat eliminado con éxito"
+    },
+    "suscribed": {
+      "title": "¡Hecho!",
+      "text": "Desde este momento formas parte del '{0}'",
+      "text_2": "Ahora sólo necesitas subir el HiBeat con el que quieres sorprender a la comunidad y alzarte campeón"
+    },
+    "unsubscribe": {
+      "title": "Darse de baja",
+      "text": "¿Deseas darte de baja en el '{0}'?"
+    },
+    "canceled": {
+      "text": "Tu participación en el '{0}'  ha sido cancelada.",
+      "text_2": "Recuerda que puedes volver a participar hasta que finalice el proceso de inscripción."
+    },
+    "remove_sure_challenge": {
+      "title": "¿Quieres eliminar este Hibeat?",
+      "text": "Si has cambiado de opinión puedes subir otro Hibeat y configurarlo para participar con él en el challenge.",
+      "text_2": "Esta acción eliminará el HiBeat actual y toda su configuración.",
+      "text_3": "¿Estás seguro?"
+    },
+    "hibeat": {
+      "text": "Tu Hibeat dura demasiado, revisa que no excede la duración máxima permitida"
+    }
+  },
+  "hibeat_rejected_reason": {
+    "not_song": "No es un tema musical",
+    "offensive": "Es ofensivo",
+    "format": "Formato no valido",
+    "quality": "Calidad de audio baja"
+  },
+  "countries": {
+    "ES": "España",
+    "EN": "Reino Unído"
+  },
+  "challenge": {
+    "challenge": "Retos",
+    "end_challenge_warning": "¡El proceso de participación de este Challenge ha finalizado!",
+    "not_participating_yet": "Parece que todavía no has participado con ningún HiBeat",
+    "upload": "subir un HiBeat",
+    "cancel_subscription": "Cancelar suscripción",
+    "selected_hibeat": "HiBeat seleccionado",
+    "inscription": "Inscripción",
+    "inscription_me": "Inscribirme",
+    "participate_question": "¿Quieres participar en {0}?"
+  },
+  "cookie": {
+    "header": "Esta web utiliza cookies!",
+    "message": "Este sitio web utiliza cookies para garantizarle la mejor experiencia en nuestro sitio web.",
+    "dismiss": "¡Lo tengo!",
+    "allow": "Permitir cookies",
+    "deny": "Rechazar",
+    "link": "Saber más",
+    "policy": "Política de cookies"
+  },
+  "error_code_not_valid": "El código no es correcto",
+  "Bass": "Bajo",
+  "Drums": "Batería",
+  "Effects": "Efectos",
+  "Guitar": "Guitarra",
+  "Keyboard": "Teclado",
+  "Mallet": "Perc. con Baquetas",
+  "Mixed": "Variado",
+  "Percussion": "Percusión",
+  "String": "Cuerda",
+  "Synth": "Sintetizador",
+  "Vocal": "Vocal",
+  "Wind&Brass": "Viento Metal",
+  "rejected_status": {
+    "Not_theme_song": "No es un tema musical",
+    "Is_offensive": "Es ofensivo",
+    "Invalid_format": "Formato inválido",
+    "Low_audio_quality": "Calidad de audio baja"
+  },
+  "copyright_violation": "Tu hibeat no esta permitido por incumplir los derechos de copyright."
+}

@@ -1,0 +1,42 @@
+input {
+    color: var(--syspotec-primary);
+  }
+  .custom-input-file {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    color: var(--syspotec-primary);
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10%;
+    border: 2px solid var(--syspotec-primary);
+    border-radius: 1.875rem;
+  }
+  p {
+    color: var(--syspotec-primary);
+  }
+  .initial-state {
+    border-radius: 1.875rem;
+    background: var(--white);
+    background: linear-gradient(to left, var(--white) 50%, var(--syspotec-primary) 50%) right;
+    background-size: 200%;
+    transition: 2s ease-out;
+    .icon-music-container {
+      background: var(--white);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      border-radius: 10px;
+      i {
+        color: var(--syspotec-primary);
+      }
+    }
+  }
+
+  .loaded-file {
+    background-position: left;
+    div {
+      color: var(--white);
+    }
+  }

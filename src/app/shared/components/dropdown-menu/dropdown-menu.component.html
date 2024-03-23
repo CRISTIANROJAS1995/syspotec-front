@@ -1,0 +1,35 @@
+<!-- <div class="dropdown-container btn-group btn-block" [ngClass]="type">
+  <div class="dropdown" *ngIf="options">
+    <button
+      class="drop-btn btn dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <span class="w-100 d-inline-block">{{ option || defaultText }}</span>
+      <i class="bi bi-chevron-down me-2"></i>
+    </button>
+    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+      <li *ngFor="let option of options" class="dropdown-item" (click)="selectOption(option)">
+        {{ option }}
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<mat-form-field class="w-full">
+    <mat-select class="p-5" [(ngModel)]="toppings" multiple [placeholder]="defaultText">
+      <mat-select-trigger>
+        <span *ngIf="toppings?.length > 0">
+            {{toppings[0].name}}
+          </span>
+        <span *ngIf="(toppings?.length || 0) > 1" class="example-additional-selection">
+          (+{{(toppings?.length || 0) - 1}} {{toppings?.length === 2 ? 'Otro' : 'Otros'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let option of options" [value]="option"  (click)="selectOption(option)">{{option.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+

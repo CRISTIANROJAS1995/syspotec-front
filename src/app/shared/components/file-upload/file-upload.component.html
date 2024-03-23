@@ -1,0 +1,56 @@
+<hibeats-modal *ngIf="showModal" (Onclose)="showModal = false" [title]="titleModal">
+  {{ textModal  }}
+</hibeats-modal>
+<div>
+  <div class="my-3 initial-state" [ngClass]="{ 'loaded-file': fileTmp.fileName }">
+    <div class="custom-input-file cursor-pointer" (click)="openFile()" *ngIf="!ficherovalido">
+      <span><mat-icon svgIcon="mat_solid:add" class="icon-size-8"></mat-icon></span>
+      <span class="mx-3 text-white">Click to select the upload file</span>
+    </div>
+    <div *ngIf="fileTmp.fileName" class="custom-input-file">
+      <div class="icon-music-container mx-5">
+
+        <mat-icon *ngIf="!fileTmp.temporalUrl" (click)="togglePlay()" svgIcon="mat_solid:queue_music" class="icon-size-8"></mat-icon>
+        <mat-icon *ngIf="fileTmp.temporalUrl && !isPlaying" (click)="togglePlay()" svgIcon="mat_solid:play_circle" class="icon-size-8"></mat-icon>
+        <mat-icon *ngIf="isPlaying" (click)="togglePlay()" svgIcon="mat_solid:pause_circle" class="icon-size-8"></mat-icon>
+
+        <div
+          *ngIf="!fileTmp.temporalUrl"
+          class="spinner-border"
+          style="margin-top: 7px; width: 16px; height: 16px; color: var(--syspotec-primary)"
+          role="status"
+        >
+          <span class="visually-hidden">...</span>
+        </div>
+      </div>
+      {{ fileTmp.fileName }}
+      <mat-icon class="mr-5" svgIcon="mat_solid:close" (click)="clearFileSelection($event)"></mat-icon>
+    </div>
+  </div>
+  <div>
+    <p class="text-white">
+      <b>maximum duration:</b> {{ maxTime }} minutos <br />
+      <b>extension:</b> {{ allowedFormats }} <br />
+      <b>Do not reuse the same track for different HiBeats.</b>
+    </p>
+    <!-- <div class="mt-3 mb-3">
+        <div class="inline-flex items-end w-full mt-1.5">
+            <mat-checkbox
+                [(ngModel)]="acceptTerms"
+                [color]="'primary'"
+                >
+                <span>I have read and accept</span>
+                <a
+                  target="_blank"
+                  href="https://hibeats.com/en/terms-and-conditions-of-use/"
+                  class="ml-1 text-primary-500 hover:underline">terms of use.
+                </a>
+            </mat-checkbox>
+        </div>
+    </div> -->
+
+     <!-- <input #inputfile class="hidden" type="file" (change)="getFile($event)" accept=".mp3,.wav,audio/*" /> -->
+     <input #inputfile class="hidden" type="file" (change)="getFile($event)" accept=".mp3" />
+
+  </div>
+</div>

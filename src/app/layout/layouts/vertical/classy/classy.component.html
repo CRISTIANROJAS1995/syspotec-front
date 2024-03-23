@@ -1,0 +1,114 @@
+<!-- Loading bar -->
+<syspotec-loading-bar></syspotec-loading-bar>
+
+<!-- Navigation -->
+<syspotec-vertical-navigation
+    class="dark bg-gray-900 print:hidden"
+    [mode]="isScreenSmall ? 'over' : 'side'"
+    [name]="'mainNavigation'"
+    [navigation]="navigation.default"
+    [opened]="!isScreenSmall">
+    <!-- Navigation header hook -->
+    <ng-container syspotecVerticalNavigationContentHeader>
+        <div class="flex items-center w-full p-4 pl-6">
+            <!-- Logo -->
+            <div class="flex items-center justify-center">
+                <img
+                    class="w-15"
+                    src="assets/images/svg/logo.svg">
+            </div>
+            <!-- Components -->
+            <div class="flex items-center ml-auto">
+                <!-- <notifications></notifications> -->
+                <!-- <user [showAvatar]="false"></user> -->
+            </div>
+        </div>
+        <!-- User -->
+        <div class="flex flex-col items-center w-full p-4">
+            <div class="relative w-24 h-24">
+                <img
+                    class="w-full h-full rounded-full"
+                    *ngIf="userModel.listImage.length > 0"
+                    [src]="userModel.listImage[0].url"
+                    alt="User avatar">
+                <mat-icon
+                    class="icon-size-24"
+                    *ngIf="userModel.listImage.length == 0"
+                    [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+            </div>
+            <div class="flex flex-col items-center justify-center w-full mt-6">
+                <div class="w-full whitespace-nowrap text-ellipsis overflow-hidden text-center leading-normal font-medium">
+                    {{userModel.name}}
+                </div>
+                <div class="w-full mt-0.5 whitespace-nowrap text-ellipsis overflow-hidden text-center text-md leading-normal font-medium text-secondary">
+                    {{userModel.email}}
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <!-- Navigation footer hook -->
+    <!-- <ng-container syspotecVerticalNavigationContentFooter>
+        <div class="flex flex-0 items-center justify-center h-16 pr-6 pl-2 mt-20 mb-4 opacity-12">
+            <img
+                class="max-w-26"
+                src="assets/images/svg/logo.svg">
+        </div>
+    </ng-container> -->
+</syspotec-vertical-navigation>
+
+<!-- Wrapper -->
+<div class="flex flex-col flex-auto w-full min-w-0">
+
+    <!-- Header -->
+    <div class="relative flex flex-0 items-center w-full h-16 px-4 md:px-6 z-49 shadow dark:shadow-none dark:border-b bg-card dark:bg-transparent print:hidden">
+        <!-- Navigation toggle button -->
+        <button
+            mat-icon-button
+            (click)="toggleNavigation('mainNavigation')">
+            <mat-icon [svgIcon]="'heroicons_outline:menu'"></mat-icon>
+        </button>
+
+        <!-- <div class="absolute right-0 left-0 flex items-center justify-center ">
+            <img src="assets/images/svg/hibeats_for_artists_logo_horizontal.svg">
+            <img
+                class="w-8"
+                src="assets/images/svg/logo-header.svg">
+            <span class="text-3xl text-primary font-extrabold ml-2">HiBeats <span class="ml-1 text-2xl font-medium hidden md:contents">for Artists</span></span>
+        </div> -->
+
+        <div class="pl-8 w-full flex items-center justify-center">
+            <div class="flex flex-col">
+                <img class="w-50" src="assets/images/svg/hibeats_for_artists_logo_horizontal.svg">
+            </div>
+        </div>
+
+        <!-- Components -->
+        <div class="flex items-center pl-2 ml-auto space-x-4">
+            <syspotec-fullscreen class="hidden md:block"></syspotec-fullscreen>
+            <languages></languages>
+            <user [showAvatar]="false"></user>
+            <!-- <search [appearance]="'bar'"></search>
+            <shortcuts></shortcuts> -->
+            <!-- <messages></messages> -->
+            <!-- <button
+                class="lg:hidden"
+                mat-icon-button
+                >
+                <mat-icon [svgIcon]="'heroicons_outline:chat-alt-2'"></mat-icon>
+            </button> -->
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col flex-auto">
+        <!-- *ngIf="true" hack is required here for router-outlet to work correctly.
+             Otherwise, layout changes won't be registered and the view won't be updated! -->
+        <router-outlet *ngIf="true"></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <!--<div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">syspotec &copy; {{currentYear}}</span>
+    </div>-->
+
+</div>

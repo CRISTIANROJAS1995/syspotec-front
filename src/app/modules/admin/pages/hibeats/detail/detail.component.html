@@ -1,0 +1,165 @@
+<div class="flex flex-col flex-auto w-full max-w-screen-xl mx-auto px-6 md:px-8">
+    <div class="flex-row items-center justify-between w-full">
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 grid-flow-row gap-6 w-full mt-4 sm:mt-4">
+            <div class="flex flex-col flex-auto  place-items-center xl:place-items-end lg:place-items-end md:place-items-end sm:place-items-end rounded-2xl">
+                <img class="rounded-lg w-60 h-60 object-cover" [src]="hibeat.urlCover" alt="Card cover image">
+            </div>
+
+            <div class="flex flex-col flex-auto justify-center place-items-center  xl:place-items-start md:place-items-start sm:place-items-center rounded-2xl">
+
+                <div class="text-5xl font-bold text-indigo-800 tracking-tight leading-8 break-all dark:text-white">{{ hibeat.title | titlecase }}</div>
+                <div class="font-medium mt-4 tracking-tight text-1xl text-indigo-800 leading-3 dark:text-white">Uploaded on: <span class="text-bold">{{ hibeat.createdDate | date: "dd/MM/yyyy" }}</span></div>
+                <!-- <div class="font-medium  tracking-tight text-1xl text-indigo-800 leading-2  dark:text-white">State: <span class="text-bold">{{ valueCustomStatus }}</span></div> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 grid-flow-row gap-6 w-full mt-2 xl:mt-8 lg:mt-8 md:mt-8">
+
+        <div class="flex flex-col p-6">
+            <div class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white">Score</div>
+            <div class="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 grid-flow-row gap-6 w-full mt-4 sm:mt-4">
+
+                <div class="flex flex-col flex-auto place-items-center p-10 xl:p-15 lg:p-15 md:p-15 rounded-2xl points">
+                    <div class="flex justify-center items-center letterPoints text-3xl font-extrabold ">
+                        {{ hibeat.points }}
+                    </div>
+                    <div class="flex justify-center items-center  letterPoints text-3xl font-extrabold">
+                        Pts
+                    </div>
+                </div>
+
+                <div class="flex flex-col flex-auto  place-items-center justify-center xl:place-items-start lg:place-items-start md:place-items-start sm:place-items-start rounded-2xl">
+                    <div class="grid grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 grid-flow-row gap-6 w-full">
+
+                        <div class="flex flex-col flex-auto place-items-start rounded-2xl">
+                            <div class="flex items-center">
+                                <mat-icon svgIcon="mat_solid:play_circle_filled"></mat-icon>
+                                <div class="text-indigo-800 text-lg font-bold ml-2 dark:text-white">Streams:</div>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <mat-icon svgIcon="mat_solid:favorite"></mat-icon>
+                                <div class="text-indigo-800 text-lg font-bold ml-2 dark:text-white">Likes:</div>
+
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <mat-icon svgIcon="mat_solid:share"></mat-icon>
+                                <div class="text-indigo-800 text-lg font-bold ml-2 dark:text-white">Shares:</div>
+                            </div>
+                            <div class="flex items-center mt-2">
+                                <mat-icon svgIcon="mat_solid:chat_bubble"></mat-icon>
+                                <div class="text-indigo-800 text-lg font-bold ml-2 dark:text-white">Comments:</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col flex-auto place-items-end">
+                            <div class="text-indigo-800 text-lg font-bold dark:text-white">{{ hibeat.stats.totalReproduction }}</div>
+                            <div class="text-indigo-800 text-lg font-bold dark:text-white mt-2">{{ hibeat.stats.totalLike }}</div>
+                            <div class="text-indigo-800 text-lg font-bold dark:text-white mt-2">{{ hibeat.stats.totalShare }}</div>
+                            <div class="text-indigo-800 text-lg font-bold dark:text-white mt-2">{{ hibeat.stats.totalComment }}</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex flex-col bg-card rounded-2xl p-6">
+            <div class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white">Country</div>
+            <div class="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 grid-flow-row gap-6 w-full mt-4 sm:mt-4">
+
+                <div *ngIf="statCountries">
+                    <div class="flex flex-col mb-5" *ngFor="let countryStatItem of hibeat.stats.lstContry">
+                        <div class="flex items-center ">
+                            <div class="flex-auto leading-none ">
+                                <div class="text-indigo-800 text-bold font-semibold text-1xl dark:text-white">{{ countryStatItem.name }}</div>
+                                <mat-progress-bar class="mt-3 rounded-full" [mode]="'determinate'" [value]="countryStatItem.value"></mat-progress-bar>
+                            </div>
+                            <div class="flex items-end justify-end min-w-18 mt-auto ml-6 ">
+                                <div class="text-lg leading-none ">{{ countryStatItem.value }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+         <div class="flex flex-col flex-auto bg-card rounded-2xl p-6">
+            <div class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white">Age</div>
+            <div class="grid grid-cols-1 grid-flow-row gap-6 w-full mt-4 sm:mt-4">
+                <div class="flex flex-col flex-auto">
+                    <div class="flex flex-col flex-auto">
+                        <apx-chart class="flex-auto w-full" id="ageChart" [series]="statAge.series" [chart]="statAge.chart" [dataLabels]="statAge.dataLabels" [plotOptions]="statAge.plotOptions" [yaxis]="statAge.yaxis" [xaxis]="statAge.xaxis" [fill]="statAge.fill">
+                        </apx-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="flex flex-col flex-auto bg-card rounded-2xl p-6">
+            <div class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white">Gender</div>
+            <div class="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 grid-flow-row gap-6 w-full mt-4 sm:mt-4">
+                <div class="flex flex-col flex-auto bg-card shadow h-60 rounded-2xl overflow-hidden p-6">
+
+                    <apx-chart class="flex flex-auto items-center justify-center w-full h-full" id="genderChart" [series]="statGenders.series" [chart]="statGenders.chart" [legend]="{ show: false }" [colors]="statGenders.colors" [dataLabels]="statGenders.dataLabels" [labels]="statGenders.labels">
+                    </apx-chart>
+
+                </div>
+
+                <div class="flex flex-row items-center">
+                    <div class="grid grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 grid-flow-row gap-6 w-full mt-4 sm:mt-4">
+
+                        <div class="flex flex-col" *ngFor="let genderStatItem of statGenders.series; let i = index">
+                            <div class="flex items-center">
+                                <div class="flex-auto ml-4 leading-none ">
+                                    <div class="text-indigo-800 text-bold font-semibold text-1xl dark:text-white">{{ statGenders.labels[i] }}</div>
+                                    <mat-progress-bar class="mt-3 rounded-full" [mode]="'determinate'" [value]="statGenders.series[i]"></mat-progress-bar>
+                                </div>
+                                <div class="flex items-end justify-end min-w-18 mt-auto ml-6 ">
+                                    <div class="text-lg leading-none">{{statGenders.series[i]}}%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col flex-auto justify-end place-items-center bg-card rounded-2xl shadow">
+                    <div class="flex items-center mt-5">
+                        <div class="flex flex-col">
+                            <div
+                                class="text-2xl text-indigo-800 font-extrabold leading-tight dark:text-white"
+                            >
+                                Remove HiBeat
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center mt-5 mb-5">
+                        <div class="flex flex-col">
+                            <button
+                                type="button"
+                                class="syspotec-mat-button-large w-full mt-1"
+                                (click)="deletePromotion()"
+                                mat-flat-button
+                                [color]="'primary'"
+                            >
+                                <mat-icon svgIcon="mat_solid:delete"></mat-icon>
+                                <span class="ml-1"> ELIMINATE </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+    </div>
+
+
+</div>
